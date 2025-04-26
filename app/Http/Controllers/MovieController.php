@@ -175,4 +175,10 @@ public function destroy($id)
     // Kembali ke halaman sebelumnya dengan pesan sukses
     return redirect()->route('movies.index')->with('success', 'Data movie berhasil dihapus.');
 }
+public function watchlist()
+{
+    $movies = Movie::all(); // ambil semua data movies
+    return view('watchlist', compact('movies'));
+}
+
 }

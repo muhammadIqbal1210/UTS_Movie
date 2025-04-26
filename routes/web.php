@@ -26,3 +26,8 @@ Route::get('/movies/edit/{id}', [MovieController::class, 'edit'])->name('movies.
 Route::get('movies/delete/{id}', [MovieController::class, 'delete'])->name('movies.delete');
 Route::delete('/movies/delete/{id}', [MovieController::class, 'destroy'])->name('movies.delete');
 Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
+Route::get('/watchlist', function () {
+    return view('watchlist');
+})->name('watchlist');
+// route ini untuk halaman watchlist
+Route::get('/watchlist', [MovieController::class, 'watchlist'])->name('watchlist');
