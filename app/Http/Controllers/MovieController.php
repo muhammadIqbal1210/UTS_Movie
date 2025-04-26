@@ -163,4 +163,16 @@ class MovieController extends Controller
 
         return redirect('/movies/data')->with('success', 'Data berhasil dihapus');
     }
+    
+public function destroy($id)
+{
+    // Cari data movie berdasarkan ID
+    $movie = Movie::findOrFail($id);
+    
+    // Hapus datanya
+    $movie->delete();
+
+    // Kembali ke halaman sebelumnya dengan pesan sukses
+    return redirect()->route('movies.index')->with('success', 'Data movie berhasil dihapus.');
+}
 }
