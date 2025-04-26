@@ -22,4 +22,5 @@ Route::get('/movies/data', [MovieController::class, 'data']);
 Route::get('/movies/edit/{id}', [MovieController::class, 'form_edit']);
 
 Route::post('movies/{movie}/update', [MovieController::class, 'update'])->name('movies.update');
+Route::get('/movies/edit/{id}', [MovieController::class, 'edit'])->name('movies.edit');
 Route::get('movies/delete/{id}', [MovieController::class, 'delete'])->name('movies.delete');
